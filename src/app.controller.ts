@@ -1,12 +1,28 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 
-@Controller()
+interface IUser {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+@Controller('users')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  users: IUser[];
+
+  constructor() {
+    this.users = [];
+  }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  findAll(): IUser[] {
+    return this.users;
+  }
+
+  @Post()
+  create(@Body() user: IUser): IUser {
+    this.users.push(user);
+
+    return user;
   }
 }
