@@ -24,9 +24,12 @@
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
+    "@nestjs/typeorm": "^7.1.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.34",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.10"
   },
