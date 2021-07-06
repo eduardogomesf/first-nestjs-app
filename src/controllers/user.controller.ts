@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { User } from '../entities/user';
+import { User } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
 
 interface IUser {

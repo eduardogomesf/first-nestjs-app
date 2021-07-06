@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { User } from '../entities/user';
+import { User } from '../entities/user.entity';
 
 type IUserCreate = Omit<User, 'id' | 'createdAt'>;
 
