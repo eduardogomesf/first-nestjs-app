@@ -22,4 +22,12 @@ export class UserRepository {
     find(): User[] {
         return this.users;
     }
+
+    findById(id: string): User {
+        return this.users.find((user) => user.id === id);
+    }
+
+    findByEmail(email: string): User {
+        return this.users.find((user) => user.email === email);
+    }
 }

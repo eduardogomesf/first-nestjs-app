@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 interface IUser {
     firstName: string;
     lastName: string;
-    age: number;
+    email: string;
 }
 
 export class User {
@@ -13,7 +13,7 @@ export class User {
 
     lastName: string;
 
-    age: number;
+    email: string;
 
     createdAt: Date;
 
@@ -21,7 +21,7 @@ export class User {
         this.id = uuid();
         this.firstName = user.firstName;
         this.lastName = user.lastName;
-        this.age = user.age;
+        this.email = user.email;
         this.createdAt = new Date();
     }
 }

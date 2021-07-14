@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { User } from '../entities/user.entity';
 import { UserRepository } from '../repositories/user.repository';
 
@@ -9,8 +9,14 @@ export class UserService {
     constructor(private readonly userRepository: UserRepository) {}
 
     createUser(userData: IUserCreate): User {
-        if (!userData.firstName || !userData.lastName || !userData.age) {
+        if (!userData.firstName || !userData.lastName || !userData.email) {
             throw new Error('All fields must be filled');
+        }
+
+        const userByEmail = this.userRepository.findByEmail(userData.email);
+
+        if (userByEmail) {
+            throw new HttpException('Email already in use', 400);
         }
 
         const user = this.userRepository.create(userData);
@@ -22,5 +28,9 @@ export class UserService {
         const users = this.userRepository.find();
 
         return users;
+    }
+
+    findUser(id: string): User {
+        return this.userRepository.findById(id);
     }
 }
