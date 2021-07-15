@@ -28,6 +28,7 @@ export class CustomerRepository {
     }
 
     findByEmail(email: string): Customer {
+        console.log(this.customers);
         return this.customers.find((customer) => customer.email === email);
     }
 }
