@@ -1,13 +1,13 @@
 import { v4 as uuid } from 'uuid';
 
-interface IUser {
+interface ICustomer {
     firstName: string;
     lastName: string;
     email: string;
     password: string;
 }
 
-export class User {
+export class Customer {
     id: string;
 
     firstName: string;
@@ -20,7 +20,7 @@ export class User {
 
     createdAt: Date;
 
-    constructor(user: IUser) {
+    constructor(user: ICustomer) {
         this.id = uuid();
         this.firstName = user.firstName;
         this.lastName = user.lastName;
