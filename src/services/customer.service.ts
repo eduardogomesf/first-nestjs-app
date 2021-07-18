@@ -1,7 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { PasswordUtil } from 'src/utils/password.util';
-import { Customer } from '../entities/customer.entity';
-import { CustomerRepository } from '../repositories/customer.repository';
+import { PasswordUtil } from '@/utils/password.util';
+import { Customer } from '@/entities/customer.entity';
+import { CustomerRepository } from '@/repositories/customer.repository';
 
 type ICustomerCreate = Omit<Customer, 'id' | 'createdAt'>;
 
